@@ -1,0 +1,17 @@
+version: "3.9"
+
+volumes:
+  persistent:
+
+services:
+  db:
+    image: mariadb
+    container_name: mariadb
+    ports:
+      - 3306:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+    volumes:
+      - persistent:/var/lib/mysql
+    networks:
+      - default
