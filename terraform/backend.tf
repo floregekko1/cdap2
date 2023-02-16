@@ -1,4 +1,9 @@
 terraform {
+	backend "s3" {
+    bucket = "cdap-mod-yve"
+    key    = "terraform.tfstate"
+    region = "eu-west-3"
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -7,7 +12,6 @@ terraform {
   }
 }
 
-# Configure the AWS Provider
 provider "aws" {
-  region = "eu-west-3"
+  region  = "eu-west-3"
 }
