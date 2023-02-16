@@ -1,8 +1,8 @@
-resource "aws_internet_gateway" "cdap2-vpc" {
+resource "aws_internet_gateway" "internet-gateway" {
   vpc_id = aws_vpc.cdap2-vpc.id
 
   tags = {
-    Name    = "cdap2-vpc"
+    Name    = "internet-gateway"
     Project = "infrastructure"
     Teams   = "bakary-elisee"
     Manage  = "terraform"

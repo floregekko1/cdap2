@@ -4,7 +4,7 @@ resource "aws_subnet" "subnet-cdap-public" {
   cidr_block = "172.198.0.16/28"
 
   tags = {
-    Name    = "cdap2-vpc"
+    Name    = "subnet-cdap-public"
     Project = "infrastructure"
     Teams   = "bakary-elisee"
     Manage  = "terraform"
@@ -17,7 +17,7 @@ resource "aws_subnet" "subnet-cdap-private" {
   cidr_block = "172.198.0.0/28"
 
   tags = {
-    Name    = "cdap2-vpc"
+    Name    = "subnet-cdap-private"
     Project = "infrastructure"
     Teams   = "bakary-elisee"
     Manage  = "terraform"
