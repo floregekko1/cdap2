@@ -1,4 +1,9 @@
 terraform {
+	backend "s3" {
+    bucket = "cdap-elisee-bakary"
+    key    = "terraform.tfstate"
+    region = "eu-west-1"
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -7,16 +12,6 @@ terraform {
   }
 }
 
-# Configure the AWS Provider
 provider "aws" {
-  region = "eu-west-1"
-}
-
-data "terraform_remote_state" "cdap-elisee-bakary" {
-  backend = "s3"
-  config = {
-    bucket = "cdap-elisee-bakary"
-    key    = "terraform.tfstate"
-    region = "eu-west-1"
-  }
+  region  = "eu-west-1"
 }
