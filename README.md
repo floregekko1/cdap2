@@ -133,7 +133,7 @@ terraform/.terraform.lock.hcl
 
 init backend s3 on backend.ft**:**
 
-```
+```terraform
 terraform {
 	backend "s3" {
     bucket = "cdap-elisee-bakary"
