@@ -1,5 +1,6 @@
 resource "aws_nat_gateway" "nat-gateway" {
-  subnet_id     = aws_subnet.subnet-cdap-public.id
+  allocation_id = aws_eip.ip-ngw.id
+  subnet_id = aws_subnet.subnet-cdap-public.id
 
   tags = {
     Name    = "nat-gateway"
