@@ -79,7 +79,7 @@ Aller dans le projet git
 
 **copy code:**
 
-```json
+```
 terraform {
   required_providers {
     aws = {
@@ -102,7 +102,7 @@ provider "aws" {
 
 **copy code:**
 
-```json
+```
 resource "aws_vpc" "cdap2-vpc" {
     cidr_block  = "172.198.0.0/24"
     tags = {
@@ -118,7 +118,7 @@ resource "aws_vpc" "cdap2-vpc" {
 
 **copy code:**
 
-```json
+```
 .terraform
 *.tfstate
 *.tfstate.backup
@@ -133,7 +133,7 @@ terraform/.terraform.lock.hcl
 
 init backend s3 on backend.ft**:**
 
-```json
+```
 terraform {
 	backend "s3" {
     bucket = "cdap-elisee-bakary"
@@ -171,7 +171,7 @@ provider "aws" {
 
 **Création subnet privée et public:**
 
-```json
+```
 # Subnet public
 resource "aws_subnet" "subnet-cdap-public" {
   vpc_id     = aws_vpc.cdap2-vpc.id
