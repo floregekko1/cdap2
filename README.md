@@ -39,9 +39,9 @@ AKIAX2m+zeQxFom5+I4Dws/suz2RR3
 ```
 
 **Config aws**:
-`$ AKIAX2AXCHDJBSPYZTIHTL2XUD`
+`$ AKIAL2XUD`
 
-`$ gCHZUv7vfrDCJSNDCpETBz7m+zeQxFom5+I4Dws/suz2RR3`
+`$ gCHZUom5+I4Dws/suz2RR3`
 
 `$ eu-west-1`
 
