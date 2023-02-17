@@ -1,0 +1,38 @@
+2023-02-17T12:21:26.937+0100 [INFO]  Terraform version: 0.15.5
+2023-02-17T12:21:26.992+0100 [INFO]  Go runtime version: go1.16.4
+2023-02-17T12:21:26.992+0100 [INFO]  CLI args: []string{"C:\\ProgramData\\chocolatey\\lib\\terraform\\tools\\terraform.exe", "fmt", "-no-color", "-"}
+2023-02-17T12:21:26.992+0100 [TRACE] Stdout is not a terminal
+2023-02-17T12:21:26.992+0100 [TRACE] Stderr is not a terminal
+2023-02-17T12:21:26.992+0100 [TRACE] Stdin is not a terminal
+2023-02-17T12:21:26.996+0100 [DEBUG] Attempting to open CLI config file: C:\Users\bakary.dembele\AppData\Roaming\terraform.rc
+2023-02-17T12:21:26.996+0100 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2023-02-17T12:21:26.997+0100 [DEBUG] Using modified User-Agent: HashiCorp Terraform/0.15.5 (+https://www.terraform.io) HashiCorp-terraform-exec/0.17.3
+2023-02-17T12:21:26.997+0100 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2023-02-17T12:21:26.998+0100 [DEBUG] ignoring non-existing provider search directory C:\Users\bakary.dembele\AppData\Roaming\terraform.d\plugins
+2023-02-17T12:21:27.000+0100 [DEBUG] ignoring non-existing provider search directory C:\Users\bakary.dembele\AppData\Roaming\HashiCorp\Terraform\plugins
+2023-02-17T12:21:27.001+0100 [INFO]  CLI command args: []string{"fmt", "-no-color", "-"}
+2023-02-17T12:21:27.001+0100 [TRACE] terraform fmt: Formatting <stdin>
+2023-02-17T12:21:27.001+0100 [DEBUG] Using modified User-Agent: Terraform/0.15.5 HashiCorp-terraform-exec/0.17.3
+2023-02-17T12:21:27.001+0100 [DEBUG] Using modified User-Agent: HashiCorp Terraform/0.15.5 (+https://www.terraform.io) HashiCorp-terraform-exec/0.17.3
+
+panic: runtime error: slice bounds out of range [:-2]
+
+goroutine 1 [running]:
+github.com/hashicorp/terraform/internal/command/format.appendSourceSnippets(0xc0009b9620, 0xc00061bd60, 0x4100480)
+	/home/circleci/project/project/internal/command/format/diagnostic.go:253 +0xaa5
+github.com/hashicorp/terraform/internal/command/format.DiagnosticPlainFromJSON(0xc00061bd60, 0x4e, 0xc0009b9500, 0xc00061bd60)
+	/home/circleci/project/project/internal/command/format/diagnostic.go:151 +0x15a
+github.com/hashicorp/terraform/internal/command/format.DiagnosticPlain(0x30688c0, 0xc0000a94a0, 0xc0009b9500, 0x4e, 0xc0005b9b80, 0x13a)
+	/home/circleci/project/project/internal/command/format/diagnostic.go:126 +0x5e
+github.com/hashicorp/terraform/internal/command.(*Meta).showDiagnostics(0xc0003a0d20, 0xc0003df8d0, 0x1, 0x1)
+	/home/circleci/project/project/internal/command/meta.go:720 +0x4a5
+github.com/hashicorp/terraform/internal/command.(*FmtCommand).Run(0xc0003a0d20, 0xc00015e020, 0x1, 0x2, 0xc000463b90)
+	/home/circleci/project/project/internal/command/fmt.go:87 +0x4ca
+github.com/mitchellh/cli.(*CLI).Run(0xc000376640, 0xc0008bcf30, 0x2bcf796, 0x3)
+	/home/circleci/go/pkg/mod/github.com/mitchellh/cli@v1.1.2/cli.go:262 +0x41a
+main.wrappedMain(0x0)
+	/home/circleci/project/project/main.go:384 +0x1132
+main.realMain(0x0)
+	/home/circleci/project/project/main.go:115 +0x574
+main.main()
+	/home/circleci/project/project/main.go:58 +0x29
