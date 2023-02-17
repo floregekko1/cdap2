@@ -8,7 +8,7 @@ resource "aws_security_group" "cdap2-security-group" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = [aws_vpc.cdap2-vpc.cidr_block]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   egress {
