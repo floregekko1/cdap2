@@ -1,5 +1,5 @@
 resource "aws_security_group" "security-group" {
-  name        = "allow_tls"
+  name        = "security-group"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.cdap2-vpc.id
 
@@ -10,6 +10,23 @@ resource "aws_security_group" "security-group" {
     protocol         = "tcp"
     cidr_blocks      = [aws_vpc.cdap2-vpc.cidr_block]
   }
+
+  ingress {
+    description      = "TLS from VPC"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = [aws_vpc.cdap2-vpc.cidr_block]
+  }
+
+  ingress {
+    description      = "TLS from VPC"
+    from_port        = 443
+    to_port          = 443
+    protocol         = "tcp"
+    cidr_blocks      = [aws_vpc.cdap2-vpc.cidr_block]
+  }
+
 
   egress {
     from_port        = 0
